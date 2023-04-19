@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>NO VERBAL ABUSE</title>
+    </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .bg
+        {
+            background-image: url("bg_abuse.jpg");
+            background-size: 100% 100%;
+            backdrop-filter: blur(7px);
+            height:100%;
+            width:100%;
+        }
+        .bd
+        {
+            background: rgba(2, 45, 45, 0.5);
+            backdrop-filter: blur(7px);
+            height:100%;
+            width:100%;
+        }
+        .he
+        {
+            background-color: rgb(26, 225, 182);
+            color:white;
+            text-align: center;
+            height:70px;
+            width:100%;
+            font-size: 50px;
+        }
+        .ch
+        {
+            height:80%;
+            width:50%;
+            border-radius:20px;
+            background-color: rgb(40, 169, 192);
+            border-color: black;
+            border: solid;
+        }
+        .tx
+        {
+            height:50px;
+            width:87%;
+            border-radius:25px;
+            font-size: 30px;
+        }
+        .bo
+        {
+            height:50px;
+            width:70px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 7px 7px 7px black;
+            font-size: 20px;
+
+        }
+        .mt
+        {
+            background-color: rgb(30, 144, 167);
+            color:white;
+
+        }
+        
+    </style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+
+
+<div class="bg">
+    <div class="bd">
+        <h1 class="he">NO VERBAL ABUSE!!!!</h1>
+        <br><br>
+        <div class="container-fluid">
+        <div class="col-lg-6 ch">
+            <br>
+            <input type="text" class="tx" id="msg">
+            <input type="submit" class="bo" value="Check" onclick="f1()">
+            <h2 id="mw" class="mt"></h2>
+      
+        </div>
+        <div class="col-lg-6  ch">
+            <br>
+            <input type="text" class="tx" id="ab">
+            <input type="submit" class="bo" value="Send" onclick="f2()">
+            <h2 class="mt" id="pr"></h2>
+      
+        </div>
+    </div>
+</div>
+<script>
+    function f1()
+    {
+        a=document.getElementById("msg").value;
+        document.getElementById("mw").innerHTML=a;
+        document.getElementById("msg").value="";
+        ab1="";
+        ab1=localStorage.getItem("abuse");
+       
+        localStorage.setItem("abuse",ab1+","+a);
+        
+                         
+    }
+    function f2()
+    {
+        w=document.getElementById("ab").value;
+        document.getElementById("pr").innerHTML=w;
+        ab1=localStorage.getItem("abuse");
+        arr=ab1.split(",");
+        console.log(arr);
+      
+        for(i=0; i<arr.length; i++)
+        {
+            op="";
+           // alert(arr[i]);
+           len=arr[i].length;
+           for(o=0;o<len;o++)
+           {
+                op=op+"*";
+           }
+          w= w.replaceAll(""+arr[i]+"",op);
+          document.getElementById("pr").innerHTML=w;
+          document.getElementById("ab").value="";
+
+           
+            
+        }
+
+        console.log(w);
+
+    }
+</script>
+
+  </html>
+  
+
